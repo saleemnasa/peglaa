@@ -11,8 +11,8 @@ export class ShopsListComponent implements OnInit {
   source: LocalDataSource;
   constructor(private api: ApiCallsService) {
     this.source = new LocalDataSource(this.data);
-   }
-
+  }
+  d: any;
   settings = {
     columns: {
       id: {
@@ -74,14 +74,14 @@ export class ShopsListComponent implements OnInit {
         field: 'email',
         search: query
       }
-    ], false); 
+    ], false);
     // second parameter specifying whether to perform 'AND' or 'OR' search 
     // (meaning all columns should contain search query or at least one)
     // 'AND' by default, so changing to 'OR' by setting false here
   }
 
-  addrow(x){
-    console.log(x);
+  addrow(d) {
+    console.log(d);
   }
 
   ngOnInit() {

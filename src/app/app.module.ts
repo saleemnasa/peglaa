@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,6 +17,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { OwnerLoginSignupComponent } from './components/owner-login-signup/owner-login-signup.component';
+import { CustomerLoginSignupComponent } from './components/customer-login-signup/customer-login-signup.component';
 
 
 const appRoutes: Routes = [
@@ -23,7 +26,9 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'shops_list', component: ShopsListComponent },
   { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'owner_login_signup', component: OwnerLoginSignupComponent },
+  { path: 'customer_login_signup', component: CustomerLoginSignupComponent }
 ]
 
 @NgModule({
@@ -34,7 +39,9 @@ const appRoutes: Routes = [
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    OwnerLoginSignupComponent,
+    CustomerLoginSignupComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -42,6 +49,7 @@ const appRoutes: Routes = [
       { enableTracing: false }
     ),
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     Ng2SmartTableModule,
     AngularFontAwesomeModule
