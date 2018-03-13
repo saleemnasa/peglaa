@@ -7,8 +7,9 @@ import { Globals } from './app.globals';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private  globals: Globals){
+  constructor(private  Globals: Globals){
 
   }
+  globals = this.Globals;
   title = 'Peglaa';
 }
