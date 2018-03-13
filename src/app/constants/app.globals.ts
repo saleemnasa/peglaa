@@ -11,5 +11,9 @@ export class Globals {
    started = '1st Feb 2018';
    location = 'Hyderabad';
    api = 'http://www.peglaa.com';
+   facebook_link = 'https://www.facebook.com/';
+   twitter_link = 'https://www.twitter.com/';
+   google_plus_link = 'https://plus.google.com/';
+   linkedin_link = 'https://www.linkedin.com/';
 
 }

@@ -8,7 +8,8 @@ import { Globals } from '../../constants/app.globals';
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private globals: Globals) { }
+  constructor(private Globals: Globals) { }
+  globals = this.Globals;
 
   ngOnInit() {
   }

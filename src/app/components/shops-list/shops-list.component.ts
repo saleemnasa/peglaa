@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalDataSource } from 'ng2-smart-table';
 import { ApiCallsService } from '../../services/api-calls.service';
 
 @Component({
@@ -7,9 +8,11 @@ import { ApiCallsService } from '../../services/api-calls.service';
   styleUrls: ['./shops-list.component.css']
 })
 export class ShopsListComponent implements OnInit {
-
-  constructor(private api: ApiCallsService) { }
-
+  source: LocalDataSource;
+  constructor(private api: ApiCallsService) {
+    this.source = new LocalDataSource(this.data);
+  }
+  d: any;
   settings = {
     columns: {
       id: {
@@ -24,7 +27,8 @@ export class ShopsListComponent implements OnInit {
       email: {
         title: 'Email'
       }
-    }
+    },
+    mode: "external",
   };
 
   data = [
@@ -50,6 +54,35 @@ export class ShopsListComponent implements OnInit {
       email: "Rey.Padberg@rosamond.biz"
     }
   ];
+
+  onSearch(query: string = '') {
+    this.source.setFilter([
+      // fields we want to include in the search
+      {
+        field: 'id',
+        search: query
+      },
+      {
+        field: 'name',
+        search: query
+      },
+      {
+        field: 'username',
+        search: query
+      },
+      {
+        field: 'email',
+        search: query
+      }
+    ], false);
+    // second parameter specifying whether to perform 'AND' or 'OR' search 
+    // (meaning all columns should contain search query or at least one)
+    // 'AND' by default, so changing to 'OR' by setting false here
+  }
+
+  addrow(d) {
+    console.log(d);
+  }
 
   ngOnInit() {
     console.log(this.api.myData());
