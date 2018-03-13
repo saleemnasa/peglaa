@@ -1,0 +1,5 @@
+<p class="middleContent">
+  
+  <input #search class="search" type="text" placeholder="Search..." (keydown.enter)="onSearch(search.value)">
+  <ng2-smart-table (create)="addrow(d)" [settings]="settings"  [source]="source"></ng2-smart-table>
+</p>

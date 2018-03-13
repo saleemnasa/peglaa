@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.middleContent {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin-top: 70px;
+    overflow-x: hidden;
+}
