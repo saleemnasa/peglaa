@@ -19,6 +19,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { OwnerLoginSignupComponent } from './components/owner-login-signup/owner-login-signup.component';
 import { CustomerLoginSignupComponent } from './components/customer-login-signup/customer-login-signup.component';
+import { OwnerHomeComponent } from './components/owner-home/owner-home.component';
+import { AddShopComponent } from './components/add-shop/add-shop.component';
 
 
 const appRoutes: Routes = [
@@ -28,7 +30,16 @@ const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'owner_login_signup', component: OwnerLoginSignupComponent },
-  { path: 'customer_login_signup', component: CustomerLoginSignupComponent }
+  { path: 'customer_login_signup', component: CustomerLoginSignupComponent },
+  {
+    path: 'owner_home', component: OwnerHomeComponent,
+    children: [
+      {
+        path: 'add_shop',
+        component: AddShopComponent
+      }
+    ]
+  }
 ]
 
 @NgModule({
@@ -41,7 +52,9 @@ const appRoutes: Routes = [
     AboutComponent,
     ContactComponent,
     OwnerLoginSignupComponent,
-    CustomerLoginSignupComponent
+    CustomerLoginSignupComponent,
+    OwnerHomeComponent,
+    AddShopComponent
   ],
   imports: [
     RouterModule.forRoot(
