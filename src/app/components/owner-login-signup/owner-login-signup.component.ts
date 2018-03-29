@@ -33,7 +33,7 @@ export class OwnerLoginSignupComponent implements OnInit {
           response => {
             if (response && response['status'] == 200) {
               localStorage.setItem("userData", JSON.stringify(response));
-              this.router.navigateByUrl('/owner_home/add_shop');
+              this.router.navigateByUrl('/owner_home');
             }
             if (response && !response['data']){
               alert(response['message']);

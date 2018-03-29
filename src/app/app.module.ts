@@ -10,6 +10,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
 
 import { Globals } from './constants/app.globals';
+import { Globals2Service } from './constants/app.globals2.service';
 import { ShopsListComponent } from './components/shops-list/shops-list.component';
 import { ApiCallsService } from './services/api-calls.service';
 import { FooterComponent } from './components/footer/footer.component';
@@ -35,7 +36,7 @@ const appRoutes: Routes = [
     path: 'owner_home', component: OwnerHomeComponent,
     children: [
       {
-        path: 'add_shop',
+        path: '',
         component: AddShopComponent
       }
     ]
@@ -67,7 +68,7 @@ const appRoutes: Routes = [
     Ng2SmartTableModule,
     AngularFontAwesomeModule
   ],
-  providers: [Globals, ApiCallsService],
+  providers: [Globals, Globals2Service, ApiCallsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
