@@ -16,22 +16,25 @@ export class ApiCallsService {
   options = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'x-auth-token': 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWxlZW1AYWRtaW4uY29tIiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNTIwMzQwMjEzNTkzLCJyb2xlcyI6IlNUQVJUOkFETUlOOkVORCIsImV4cCI6MTUyMDM2OTAxMywidXNlcklkIjoxLCJpYXQiOjE1MjAzNDAyMTN9.AeaYP_TUEOIXZgmMGZEWFwxma5FaLWiB-ExiI8FU5kVBdazh93b5X2B-8XIBYO4ok3TEPnTTwB35-a2niaf3iw',
+      // 'x-auth-token': 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzYWxlZW1AYW
+      // RtaW4uY29tIiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNTIwMzQwMjEzNTkzLCJyb2xlc
+      // yI6IlNUQVJUOkFETUlOOkVORCIsImV4cCI6MTUyMDM2OTAxMywidXNlcklkIjoxLCJpYXQiOjE1MjAzND
+      // AyMTN9.AeaYP_TUEOIXZgmMGZEWFwxma5FaLWiB-ExiI8FU5kVBdazh93b5X2B-8XIBYO4ok3TEPnTTwB35-a2niaf3iw',
       // 'sessionless': 'true'
     })
   };
 
   getAllShops() {
-    console.log(this.options)
-    return this.http.get('http://www.peglaa.com/api/v1/shop', this.options)
+    console.log(this.options);
+    return this.http.get('http://www.peglaa.com/api/v1/shop', this.options);
   }
 
   ownerLogin(owner) {
-    let obj = {
-      "username": ""+owner.mobile,
-      "password": ""+owner.password
-    }
-    return this.http.post(this.global.api+'/auth/authenticate', JSON.stringify(obj), this.options);
+    const obj = {
+      'username': '' + owner.mobile,
+      'password': '' + owner.password
+    };
+    return this.http.post(this.global.api + '/auth/authenticate', JSON.stringify(obj), this.options);
   }
 
 

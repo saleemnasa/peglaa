@@ -22,9 +22,11 @@ import { OwnerLoginSignupComponent } from './components/owner-login-signup/owner
 import { CustomerLoginSignupComponent } from './components/customer-login-signup/customer-login-signup.component';
 import { OwnerHomeComponent } from './components/owner-home/owner-home.component';
 import { AddShopComponent } from './components/add-shop/add-shop.component';
+import { AngularPracticeComponent } from './components/angular-practice/angular-practice.component';
 
 
 const appRoutes: Routes = [
+  { path: 'practice', component: AngularPracticeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'shops_list', component: ShopsListComponent },
@@ -55,7 +57,8 @@ const appRoutes: Routes = [
     OwnerLoginSignupComponent,
     CustomerLoginSignupComponent,
     OwnerHomeComponent,
-    AddShopComponent
+    AddShopComponent,
+    AngularPracticeComponent
   ],
   imports: [
     RouterModule.forRoot(
